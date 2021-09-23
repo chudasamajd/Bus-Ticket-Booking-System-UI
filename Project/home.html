@@ -1,0 +1,448 @@
+<html>
+    <head>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }    
+        body{
+            font:14px/20px arial, san-serif;
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+            font-size: 180%;
+            line-height: 120%;
+            padding: 5% 0;
+        }
+        h2{
+            text-decoration: underline;
+            line-height: 280%;
+            padding-left: 2%;
+        }
+        h3{
+            line-height: 110%;
+            padding: 5% 0;
+        }
+        h4{
+            text-align: center;
+            margin-top: -4%;
+        }
+        p{
+            padding: 1%;
+        }
+        img{
+            text-align: center;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+        nav a{
+            color:white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover{
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        header{
+            
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        #logo{
+            margin: 10px;
+            margin-top: -28px;
+            float: left;
+            width: 130px;
+            height: 130px;
+            background: url(logo4.png) no-repeat center;
+            background-size: cover;
+        }
+        nav{
+            float: right;
+            padding: 35px 20px 20px 0px;
+        }
+        #menu-icon{
+            display: hidden;
+            width: 30px;
+            height: 30px;
+            background: url(bg_icone_menu.png) no-repeat center;
+        }
+        a:hover#menu-icon{
+            border-radius: 4px 4px 0 0;
+        }
+        ul{
+            list-style: none;
+        }
+        nav ul li{
+            display:inline-block;
+            float: left;
+            padding: 10px;
+        }
+        .current{
+            color:white;
+            border-bottom: 2px solid white;
+        }
+        #doc{
+            
+        }
+        #content{
+            margin-top: 0px;
+        }
+        .blueberry{
+            
+        }
+        section{
+            width: 29%;
+            float: left;
+            margin: 2% 2%;
+            text-align: center;
+        }
+        .clear{
+            clear: both;
+        }
+        footer{
+            background-color: #101010;
+            width: 100%;
+            overflow: hidden;
+        }
+        footer p,footer h3{
+            color: white;
+        }
+        footer p a{
+            color: white;
+            text-decoration: none;
+        }
+        ul.social li{
+            display: inline;
+        }
+        ul.social li  img{
+            height: 40px;
+        }
+        
+        
+        
+        
+        #tab1title{
+            font-size: 30px;
+        }
+        #tab2title{
+            font-size: 30px;
+        }
+        #button{
+            height:19px;
+            width: 150px;
+            font:12px arial;
+            border:3px solid black;
+            margin-top: 30px;
+            padding-top: 6px;
+            transition:all 0.3s;
+            cursor: pointer;
+        }
+        #button:hover{
+            background-color: black;
+            color:white;
+        }
+        #addimg{
+            margin-top: 5%;
+        }
+        .block{
+             border: 1px solid #ebebeb;
+            padding-bottom: 20px;
+            background-color: #f6f6f6;
+            border-radius: 0px;
+            margin-bottom: 70px;
+        }
+        #footerimg{
+            height: 45%;
+            width: 100%;
+            margin-bottom: 1px;
+        }
+        
+        
+         #slider{
+               
+               
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+              
+            }
+        #slider #slide img{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+        }
+        #booking{
+            height: auto;
+            width: auto;
+            position:absolute;
+            color: white;
+            font:13px arial, san-serif;
+            font-weight: bold;
+            margin-top: 40%;
+            text-align: center;
+            left: 26%;
+        }
+        #booking div{
+            margin-bottom: 10px;
+        }
+        #from{
+            float: left;
+           margin-left: 5px;
+        }
+        select{
+            height: 35px;
+            width: 130px;
+            outline: none;
+            border: none;
+        }
+        #to{
+            float: left;
+            margin-left: 5px;
+        }
+        #date,#date2{
+            float: left;
+        }
+        #date input,#date2 input{
+            height: 35px;
+            width: 140px;
+            margin-left: 5px;
+            outline: none;
+            border: none;
+            padding-left: 15px;
+        }
+        #bookticket{
+            float: left;
+        }
+        #bookticket input:hover{
+            cursor: pointer;
+        }
+        #bookticket input{
+            height: 35px;
+            width: 130px;
+            background-color: #FFA414;
+            outline: none;
+            border: none;
+            margin-left: 5px;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #booktickettext,#fromtext,#totext,#onwarddatetext,#returndatetext{
+            font-size:11px;
+        }
+        
+        
+        @media screen and (max-width:478px){
+            body{
+                position: absolute;
+            }
+        }
+        @media screen and (max-width:740px){
+            header{
+                position: fixed;
+            }
+            #menu-icon{
+                display: inline-block;
+                border: none;
+            }
+            nav ul, nav:active ul{
+                display: none;
+                position: absolute;
+                padding: 20px;
+                background:#101010;
+                border: 1px solid white;
+                right: 20px;
+                top:80px;
+                width: 70%;
+                border-radius: 2px 0 2px 2px;
+            }
+            nav li{
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                margin: 0;
+            }
+            nav:hover ul{
+                display: block;
+            }
+            section{
+                float: left;
+                width: 90%;
+                margin: 5%;
+                padding: 0;
+            }
+            
+            
+           
+        }
+    </style>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+           if($(this).scrollTop()>190) 
+               {
+                    $("header").css("background-color","#101010");
+              }
+            else
+                {
+                    $("header").css("background-color","transparent");
+                }
+        });
+    </script>
+        
+        
+        
+ 
+        
+        
+    </head>
+    <body>
+        <header>
+            <a href="#" id="logo"></a>
+            <nav>
+                <a href="#" id="menu-icon"></a>
+                <ul>
+                    <li><a href="home.html" class="current">HOME</a></li>
+                    <li><a href="manage%20trip.html">MANAGE TRIP</a></li>
+                    <li><a href="search%20place.html">SEARCH PLACE</a></li>
+                    <li><a href="#">HELP</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div id="slider">
+            <div id="slide">
+                <img src="home%20image.jpg" height="100%" width="100%"/>
+            </div>
+            
+            
+            <div id="booking"> 
+                
+                <div>BOOK YOUR TICKET NOW!</div>
+                
+                <div id="field">
+                    <div id="from">
+                        <div id="fromtext">FROM</div>
+                        <div>
+                        <select>
+                            <option>CITY</option>
+                            <option>INDIA</option>
+                            <option>AFRICA</option>
+                            <option>EUROPE</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div id="to">
+                        <div id="totext">TO</div>
+                        <div>
+                        <select>
+                            <option>CITY</option>
+                            <option>INDIA</option>
+                            <option>AFRICA</option>
+                            <option>EUROPE</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div id="date">
+                        <div id="onwarddatetext">ONWARD DATE</div>
+                        <div><input type="date" id="cdate"/></div>
+                    </div>
+                    <div id="date2">
+                        <div id="returndatetext">RETURN DATE</div>
+                        <div><input type="date"  id="rdate"/></div>
+                    </div>
+                    <div id="bookticket">
+                        <div id="booktickettext">&nbsp;</div>
+                        <div><a href="seat%20selection.html"><input type="submit" value="BOOK"/></a></div>
+                    </div>
+                </div>
+              
+            </div>
+         
+            
+            
+            
+        </div>
+        
+       
+        
+        
+        <h1><b id="tab1title">WHAT MAKES US UNIQUE</b></h1>
+        <section>
+            <img src="feature1.png"/>
+            <h1>RAINBOW DEALS</h1>
+            <p>Get a little extra! Additional discounts sponsored by your favorite bus operators exclusively on Rainbow Bus.</p>
+        </section>
+        <section>
+            <img src="feature2.png"/>
+            <h1>PICTURE REVIEWS</h1>
+            <p>Rely on ratings and actual photos from fellow travellers to choose your bus!</p>
+        </section>
+        <section>
+            <img src="feature3.png"/>
+            <h1>REST STOPS</h1>
+            <p>Get information on rest stops along the way.</p>
+        </section>
+        <div class="clear"></div>
+       
+        
+        <div id="promise">
+         <h1><b id="tab2title">WE PROMISE TO DELIVER</b></h1>
+       
+        <section class="block">
+            <img src="service1.png"/>
+            <h1>CUSTOMER SERVICE</h1>
+            <p>We put our experience and relationship to good use and are available to solve your travel issues.</p>
+        </section>
+        <section class="block">
+            <img src="service2.png"/>
+            <h1>LOWEST PRICES</h1>
+            <p>We always give you the lowest price with the best partner offers.</p>
+        </section>
+        <section class="block">
+            <img src="service3.png"/>
+            <h1>UNMATCHED BENEFITS</h1>
+            <p>We take care of your travel beyond ticketing by providing you with innovative and unique benefits.</p>
+        </section> 
+        </div>
+        
+        
+        
+        <footer>
+            <section>
+                <h3><b>RAINBOW BUS</b></h3>
+                <p><b>HOME</b><br>
+                    <b>MANAGE TRIP</b><br>
+                    <b>SEARCH PLACE</b><br>
+                    <b>HELP</b><br>
+                    
+                </p>
+            </section>
+            <section>
+                <h3>CONNECT WITH US!</h3>
+                <ul class="social">
+                        <li><a href="#"><img src="Facebook.png"/></a></li>
+                        <li><a href="#"><img src="Google.png"/></a></li>
+                        <li><a href="#"><img src="Twitter.png"/></a></li>
+                </ul>
+            </section>
+            <section id="footerlogo">
+                <img src="footerlogo.png" />
+            </section>
+        </footer>
+    </body>
+</html>

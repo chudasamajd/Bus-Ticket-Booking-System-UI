@@ -1,0 +1,710 @@
+<html>
+    <head>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }    
+        body{
+            font:14px/20px arial, san-serif;
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+            font-size: 180%;
+            line-height: 120%;
+            padding: 5% 0;
+        }
+        h2{
+            text-decoration: underline;
+            line-height: 280%;
+            padding-left: 2%;
+        }
+        h3{
+            line-height: 110%;
+            padding: 5% 0;
+        }
+        h4{
+            text-align: center;
+            margin-top: -4%;
+        }
+        p{
+            padding: 1%;
+        }
+        img{
+            text-align: center;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+        nav a{
+            color:white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover{
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        header{
+            background: #101010;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        #logo{
+            margin: 10px;
+            margin-top: -28px;
+            float: left;
+            width: 130px;
+            height: 130px;
+            background: url(logo4.png) no-repeat center;
+            background-size: cover;
+        }
+        nav{
+            float: right;
+            padding: 35px 20px 20px 0px;
+        }
+        #menu-icon{
+            display: hidden;
+            width: 30px;
+            height: 30px;
+            background: url(bg_icone_menu.png) no-repeat center;
+        }
+        a:hover#menu-icon{
+            border-radius: 4px 4px 0 0;
+        }
+        ul{
+            list-style: none;
+        }
+        nav ul li{
+            display:inline-block;
+            float: left;
+            padding: 10px;
+        }
+        .current{
+            color:white;
+            border-bottom: 2px solid white;
+        }
+        section{
+            width: 29%;
+            float: left;
+            margin: 2% 2%;
+            text-align: center;
+        }
+        .clear{
+            clear: both;
+        }
+        footer{
+            background-color: #101010;
+            width: 100%;
+            overflow: hidden;
+        }
+        footer p,footer h3{
+            color: white;
+        }
+        footer p a{
+            color: white;
+            text-decoration: none;
+        }
+        ul.social li{
+            display: inline;
+        }
+        ul.social li  img{
+            height: 40px;
+        }
+        #footerimg{
+            height: 45%;
+            width: 100%;
+            margin-bottom: 1px;
+        }
+        #user{
+            height: 8px;
+            width: 8px;
+            border: 2px solid #FFA414;
+            border-radius: 25px;
+           margin-right: -10px;
+        }
+        #user1{
+            height:10px;
+            width:10px;
+            margin-top: -1px;
+            margin-left: -1px;
+            display: none;
+            background-color:#FFA414;
+            border-radius: 25px;
+           
+        }
+        #agent{
+            height: 8px;
+            width: 8px;
+            border: 2px solid #FFA414;
+            border-radius: 25px;
+           margin-right: -10px;
+        }
+        #agent1{
+            height:10px;
+            width:10px;
+            margin-top: -1px;
+            margin-left: -1px;
+            display: none;
+            background-color:#FFA414;
+            border-radius: 25px;
+        
+        }
+        #form{
+            width: 100%;
+            background:white;
+            margin-left: 0px;
+            margin-top: 150px;
+            margin-bottom: 70px;
+        }
+        #uid input{
+            height: 30px;
+            width: 316px;
+            outline: none;
+            padding-left: 5px;
+            background: transparent;
+            color: white;
+            border: none;
+            box-shadow: 0px 0px 1px white;
+        }
+        #uid input:focus{
+            box-shadow: 0px 0px 1px #FFA414;
+        }
+        #pass input{
+            height: 30px;
+            width: 316px;
+            outline: none;
+            padding-left: 5px;
+            background: transparent;
+            color: white;
+            border: none;
+            box-shadow: 0px 0px 1px white;
+        }
+        #pass input:focus{
+            box-shadow: 0px 0px 1px #FFA414;
+        }
+        #login input{
+            height: 35px;
+            width: 316px;
+            background-color: #FFA414;
+            font:16px arial;
+            font-weight: bold;
+            color: white;
+            border: none;
+            outline: none;
+             cursor: pointer;
+        }
+        #signin{
+            height: 35px;
+            width: 158px;
+            background-color: #FFA414;
+            font:16px arial;
+            font-weight: bold;
+            color: white;
+            border: none;
+            outline: none;
+             cursor: pointer;
+        }
+        #signup{
+            height: 35px;
+            width: 158px;
+            background-color: #EF9013;
+            font:16px arial;
+            font-weight: bold;
+            color: white;
+            border: none;
+            outline: none;
+            margin-left: -4px;
+             cursor: pointer;
+        }
+        section table{
+            background: #282828;
+            padding: 30px;
+            color: white;
+            box-shadow: 0px 0px 7px black;
+        }
+        #fp{
+            font: 11px arial;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        #box1 img{
+            box-shadow: 0 0 10px black;
+        }
+        #detail{
+            background-color:#282828;
+            height: 45px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:200;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+            text-align: center;
+            padding-top:30px;
+            font: 20px arial black;
+            color:#FFA414;
+        }
+        #detail1{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:300;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        
+        #detail2{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:400;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detail3{
+            background-color:#282828;
+            height: 85px;
+            width: 260px;
+            position: absolute;
+            right: 44;
+            top:500;
+            overflow: hidden;
+            
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detailtitle{
+            margin-top: 10px;
+            text-align: right;
+            font: 18px arial black;
+            letter-spacing: 2px;
+        }
+        #detailcon{
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        #box2 img{
+            box-shadow: 0 0 10px black;
+        }
+        #detail02{
+            background-color:#282828;
+            height: 45px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:925;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+            text-align: center;
+            padding-top:30px;
+            font: 20px arial black;
+            color:#FFA414;
+        }
+        #detail021{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:1025;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        
+        #detail022{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:1125;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detail023{
+            background-color:#282828;
+            height: 85px;
+            width: 260px;
+            position: absolute;
+            right: 44;
+            top:1225;
+            overflow: hidden;
+            
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detailtitle02{
+            margin-top: 10px;
+            text-align: right;
+            font: 18px arial black;
+            letter-spacing: 2px;
+        }
+        #detailcon02{
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        #box3 img{
+            box-shadow: 0 0 10px black;
+        }
+        #detail03{
+            background-color:#282828;
+            height: 45px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:1650;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+            text-align: center;
+            padding-top:30px;
+            font: 18px arial black;
+            color:#FFA414;
+        }
+        #detail031{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:1750;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        
+        #detail032{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:1850;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detail033{
+            background-color:#282828;
+            height: 85px;
+            width: 260px;
+            position: absolute;
+            right: 44;
+            top:1950;
+            overflow: hidden;
+            
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detailtitle03{
+            margin-top: 10px;
+            text-align: right;
+            font: 18px arial black;
+            letter-spacing: 2px;
+        }
+        #detailcon03{
+            text-align: right;
+            font-size: 14px;
+        }
+        
+         #box4 img{
+            box-shadow: 0 0 10px black;
+        }
+        #detail04{
+            background-color:#282828;
+            height: 45px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:2375;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+            text-align: center;
+            padding-top:30px;
+            font: 16px arial black;
+            color:#FFA414;
+        }
+        #detail041{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:2475;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        
+        #detail042{
+            background-color:#282828;
+            height: 65px;
+            width: 240px;
+            position: absolute;
+            right: 44;
+            top:2575;
+            padding: 10px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detail043{
+            background-color:#282828;
+            height: 85px;
+            width: 260px;
+            position: absolute;
+            right: 44;
+            top:2675;
+            overflow: hidden;
+            
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0px 0 7px black;
+        }
+        #detailtitle04{
+            margin-top: 10px;
+            text-align: right;
+            font: 18px arial black;
+            letter-spacing: 2px;
+        }
+        #detailcon04{
+            text-align: right;
+            font-size: 14px;
+        }
+        #trending{
+            position: absolute;
+            left:40%;
+            top:95;
+            font:35px arial;
+        }
+        
+        
+        
+        @media screen and (max-width:478px){
+            body{
+                position: absolute;
+            }
+        }
+        @media screen and (max-width:740px){
+            header{
+                position: fixed;
+            }
+            #menu-icon{
+                display: inline-block;
+                border: none;
+            }
+            nav ul, nav:active ul{
+                display: none;
+                position: absolute;
+                padding: 20px;
+                background:#101010;
+                border: 1px solid white;
+                right: 20px;
+                top:80px;
+                width: 70%;
+                border-radius: 2px 0 2px 2px;
+            }
+            nav li{
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                margin: 0;
+            }
+            nav:hover ul{
+                display: block;
+            }
+            section{
+                float: left;
+                width: 90%;
+                margin: 5%;
+                padding: 0;
+            }
+            
+            
+           
+        }
+    </style>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            var flag1=0;
+            var flag2=0;
+          
+           $("#user").click(function(){
+                $("#user1").css("display","block");
+                $("#agent1").css("display","none");
+                       
+           }) ;
+               
+             $("#agent").click(function(){
+               $("#agent1").css("display","block");
+               $("#user1").css("display","none");
+           }) ;
+        });
+    </script>
+        
+        
+        
+ 
+        
+        
+    </head>
+    <body>
+        <header>
+            <a href="#" id="logo"></a>
+            <nav>
+                <a href="#" id="menu-icon"></a>
+                <ul>
+                    <li><a href="home.html" >HOME</a></li>
+                    <li><a href="manage%20trip.html">MANAGE TRIP</a></li>
+                    <li><a href="search%20place.html" class="current">SEARCH PLACE</a></li>
+                    <li><a href="#">HELP</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+         <div id="trending">Trending Destinations</div>
+        <section id="form">
+        <center>
+            <table border="0" cellspacing="15px">
+                <tr>
+                    <td>
+                        <div id="box1">
+                            <div id="detail">
+                                STATUE OF LIBERTY
+                            </div>
+                            <div id="detail1">
+                                <div id="detailtitle">ADDRESS</div>
+                                <div id="detailcon">New York, NY, United States</div>
+                            </div>
+                            <div id="detail2">
+                                <div id="detailtitle">AGENT</div>
+                                <div id="detailcon">Abc Xyz - 9012345678</div>
+                            </div>
+                            <div id="detail3">
+                                <img src="map.jpg" height="100%" width="100%"/>
+                            </div>
+                            <img src="statue-of-liberty2.jpg" height="100%" width="100%"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="box2">
+                            <div id="detail02">
+                                CENTRAL PARK
+                            </div>
+                            <div id="detail021">
+                                <div id="detailtitle02">ADDRESS</div>
+                                <div id="detailcon02">New York, NY, United States</div>
+                            </div>
+                            <div id="detail022">
+                                <div id="detailtitle02">AGENT</div>
+                                <div id="detailcon02">Abc Xyz - 9012345678</div>
+                            </div>
+                            <div id="detail023">
+                                <img src="map.jpg" height="100%" width="100%"/>
+                            </div>
+                            <img src="Central-Park.jpg" height="100%" width="100%"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="box3">
+                            <div id="detail03">
+                                ROCKEFELLER CENTER
+                            </div>
+                            <div id="detail031">
+                                <div id="detailtitle03">ADDRESS</div>
+                                <div id="detailcon03">45 Rockefeller Plaza, New York, NY, United States</div>
+                            </div>
+                            <div id="detail032">
+                                <div id="detailtitle03">AGENT</div>
+                                <div id="detailcon03">Abc Xyz - 9012345678</div>
+                            </div>
+                            <div id="detail033">
+                                <img src="map.jpg" height="100%" width="100%"/>
+                            </div>
+                            <img src="rockefeller%20center.jpg" height="100%" width="100%"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="box4">
+                            <div id="detail04">
+                                METROPOLITAN MUSEUM
+                            </div>
+                            <div id="detail041">
+                                <div id="detailtitle04">ADDRESS</div>
+                                <div id="detailcon04">1000 5th Ave, New York, NY, United States</div>
+                            </div>
+                            <div id="detail042">
+                                <div id="detailtitle04">AGENT</div>
+                                <div id="detailcon04">Abc Xyz - 9012345678</div>
+                            </div>
+                            <div id="detail043">
+                                <img src="map.jpg" height="100%" width="100%"/>
+                            </div>
+                            <img src="metropolitan%20museum.jpg" height="100%" width="100%"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+           
+        </center>
+        </section>
+       
+   
+        
+       
+        
+        
+        <footer>
+            <section>
+                <h3><b>RAINBOW BUS</b></h3>
+                <p><b>HOME</b><br>
+                    <b>MANAGE TRIP</b><br>
+                    <b>SEARCH PLACE</b><br>
+                    <b>HELP</b><br>
+                    
+                </p>
+            </section>
+            <section>
+                <h3>CONNECT WITH US!</h3>
+                <ul class="social">
+                        <li><a href="#"><img src="Facebook.png"/></a></li>
+                        <li><a href="#"><img src="Google.png"/></a></li>
+                        <li><a href="#"><img src="Twitter.png"/></a></li>
+                </ul>
+            </section>
+            <section id="footerlogo">
+                <img src="footerlogo.png" />
+            </section>
+        </footer>
+    </body>
+</html>
